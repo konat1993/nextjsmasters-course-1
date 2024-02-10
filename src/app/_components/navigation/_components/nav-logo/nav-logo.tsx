@@ -1,13 +1,24 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const NavLogo = () => {
+	const pathname = usePathname();
 	return (
-		<Link href="/" className="block h-full px-2 transition-colors duration-500 hover:bg-black">
+		<Link href="/" className={cn(
+			"h-full px-2 flex justify-center items-center transition-colors duration-500 hover:bg-black",
+			pathname === "/" ? "bg-black hover:bg-white" : "",
+		)}>
 			<Image
 				src="/nextjs.svg"
 				alt="nextjs Logo"
-				className="h-full transition-all duration-500 hover:scale-125 hover:invert"
+				className={cn(
+					"h-full transition-all duration-500 hover:scale-125 hover:invert",
+					pathname === "/" ? "invert hover:invert-0" : "",
+				)}
 				width={100}
 				height={24}
 				priority

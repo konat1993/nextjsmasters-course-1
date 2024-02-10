@@ -1,29 +1,13 @@
-import { RouteLinkItem } from "./_components";
+import { ActiveLink } from "@/shared-components";
+import { routes } from "@/consts";
 
-const routes = [
-	{
-		path: "/",
-		name: "Home",
-	},
-	{
-		path: "/about",
-		name: "About",
-	},
-	{
-		path: "/collections",
-		name: "Collections",
-	},
-	{
-		path: "/contact",
-		name: "Contact",
-	},
-];
+
 
 const NavLinks = () => {
 	return (
-		<ul className="flex w-full items-center justify-center gap-6">
+		<ul className="hidden w-fit mx-auto items-center gap-6 md:flex">
 			{routes.map((route) => (
-				<RouteLinkItem key={route.path} name={route.name} path={route.path} />
+				<ActiveLink key={route.path} name={route.name} path={route.path} />
 			))}
 		</ul>
 	);
