@@ -1,5 +1,5 @@
+import { ProductItem } from "../product-item";
 import { type Item } from "@/types/products";
-import ProductItem from "@/app/_components/product-item/product-item";
 
 type Props = {
 	items: Item[];
@@ -15,4 +15,4 @@ const ProductList = ({ items }: Props) => {
 	);
 };
 
-export default ProductList;
+export { ProductList };

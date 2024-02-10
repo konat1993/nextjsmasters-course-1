@@ -1,4 +1,4 @@
-import ProductList from "@/app/_components/product-list/product-list";
+import { ProductList } from "@/app/_components";
 import { type Item } from "@/types/products";
 
 const items: Item[] = [

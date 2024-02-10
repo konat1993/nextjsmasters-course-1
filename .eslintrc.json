@@ -50,6 +50,9 @@
 		"no-empty-pattern": "off",
 		"@typescript-eslint/no-empty-interface": "off",
 
+		"@typescript-eslint/no-unsafe-assignment": "off",
+		"@typescript-eslint/no-redundant-type-constituents": "off",
+
 		// we allow empty functions
 		"@typescript-eslint/no-empty-function": "off",
 

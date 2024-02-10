@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ProductDescription } from "../product-description";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { type Item } from "@/types/products";
-import { ProductDescription } from "@/app/_components";
 import { formatCurrency } from "@/lib/utils";
 
 type Props = {
@@ -36,4 +36,4 @@ const ProductItem = ({ item }: Props) => {
 	);
 };
 
-export default ProductItem;
+export { ProductItem };

@@ -1,4 +1,5 @@
-import { NavLogo, NavLinks } from "./_components";
+import { NavLogo, NavLinks, MobileNavigation } from "./_components";
+import { DrawerContextProvider } from "@/contexts";
 
 const Navigation = () => {
 	return (
@@ -8,7 +9,12 @@ const Navigation = () => {
 					<NavLogo />
 				</div>
 				<NavLinks />
-				<div className="w-32" />
+				<div className="w-32"></div>
+				<div className="ml-auto flex items-center justify-end h-full md:hidden">
+					<DrawerContextProvider>
+						<MobileNavigation />
+					</DrawerContextProvider>
+				</div>
 			</div>
 		</div>
 	);
