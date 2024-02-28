@@ -1,6 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/eslintrc.json",
-	"plugins": ["@typescript-eslint", "import"],
+	"plugins": [
+		"@typescript-eslint",
+		"import"
+	],
 	"parserOptions": {
 		"project": "tsconfig.json"
 	},
@@ -15,13 +18,10 @@
 	"rules": {
 		// sort imports
 		"import/order": "error",
-
 		// no let exports
 		"import/no-mutable-exports": "error",
-
 		"import/no-cycle": "error",
 		"import/no-default-export": "error",
-
 		// allow {} even though it's unsafe but comes handy
 		"@typescript-eslint/ban-types": [
 			"error",
@@ -31,7 +31,6 @@
 				}
 			}
 		],
-
 		"@typescript-eslint/consistent-type-imports": [
 			"error",
 			{
@@ -40,42 +39,54 @@
 				"disallowTypeAnnotations": false
 			}
 		],
-
-		"import/no-duplicates": ["error", { "prefer-inline": true }],
-
+		"import/no-duplicates": [
+			"error",
+			{
+				"prefer-inline": true
+			}
+		],
 		// false negatives
-		"import/namespace": ["off"],
-
+		"import/namespace": [
+			"off"
+		],
 		// we allow empty interfaces
 		"no-empty-pattern": "off",
 		"@typescript-eslint/no-empty-interface": "off",
-
+		"@typescript-eslint/no-unsafe-return": "off",
+		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-redundant-type-constituents": "off",
-
 		// we allow empty functions
 		"@typescript-eslint/no-empty-function": "off",
-
 		// we sometimes use async functions that don't await anything
 		"@typescript-eslint/require-await": "off",
-
 		// make sure to `await` inside try…catch
-		"@typescript-eslint/return-await": ["error", "in-try-catch"],
-
+		"@typescript-eslint/return-await": [
+			"error",
+			"in-try-catch"
+		],
 		// allow unused vars prefixed with `_`
 		"@typescript-eslint/no-unused-vars": [
 			"error",
-			{ "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+			{
+				"argsIgnorePattern": "^_",
+				"varsIgnorePattern": "^_"
+			}
 		],
-
 		// numbers and booleans are fine in template strings
 		"@typescript-eslint/restrict-template-expressions": [
 			"error",
-			{ "allowNumber": true, "allowBoolean": true }
+			{
+				"allowNumber": true,
+				"allowBoolean": true
+			}
 		],
-
-		"@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
-
+		"@typescript-eslint/no-misused-promises": [
+			"error",
+			{
+				"checksVoidReturn": false
+			}
+		],
 		"no-restricted-imports": [
 			"error",
 			{
@@ -86,11 +97,17 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/app/**/*.ts?(x)", "middleware.ts"],
+			"files": [
+				"src/app/**/*.ts?(x)",
+				"middleware.ts"
+			],
 			"rules": {
 				"import/no-default-export": "off"
 			}
 		}
 	],
-	"ignorePatterns": ["*.js", "*.jsx"]
+	"ignorePatterns": [
+		"*.js",
+		"*.jsx"
+	]
 }

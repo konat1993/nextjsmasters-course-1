@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductDescription } from "../product-description";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { type Item } from "@/types/products";
-import { formatCurrency } from "@/lib/utils";
+// import { type Item } from "@/types/products";
+import { type ProductGetListQuery } from "@/gql/graphql";
+// import { formatCurrency } from "@/lib/utils";
 
 type Props = {
-	item: Item;
+	item: ProductGetListQuery["products"]["data"][number];
 };
 
 const ProductItem = ({ item }: Props) => {
@@ -28,7 +29,7 @@ const ProductItem = ({ item }: Props) => {
 				</Link>
 				<div className="mb-2 flex items-center justify-between gap-6">
 					<CardTitle>{item.name}</CardTitle>
-					<span className="text-xl font-bold">{formatCurrency(item.price)}</span>
+					{/* UNCOMMENT THIS <span className="text-xl font-bold">{formatCurrency(item.price)}</span> */}
 				</div>
 				<ProductDescription truncate description={item.description} truncateLength={140} />
 			</CardContent>
