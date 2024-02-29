@@ -3,11 +3,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CardDescription } from "@/components/ui/card";
-import { type Item } from "@/types/products";
 import { truncateText } from "@/lib/utils";
+import { type ProductListItemFragmentFragment } from "@/gql/graphql";
 
 type Props = {
-	description: Item["description"];
+	description: ProductListItemFragmentFragment["description"];
 	truncateLength?: number;
 	truncate?: boolean;
 };

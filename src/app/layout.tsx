@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 	description: "E-commerce website built with Next.js",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
