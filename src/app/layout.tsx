@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/app/_components";
-// import { ProductGetListDocument } from "@/gql/graphql";
 
 const poppins = Poppins({
 	weight: ["400"],
@@ -13,10 +12,6 @@ export const metadata: Metadata = {
 	title: "Next JS Masters",
 	description: "E-commerce website built with Next.js",
 };
-
-
-
-
 
 export default async function RootLayout({
 	children,

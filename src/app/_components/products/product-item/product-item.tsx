@@ -4,12 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductDescription } from "../product-description";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-// import { type Item } from "@/types/products";
-import { type ProductGetListQuery } from "@/gql/graphql";
-// import { formatCurrency } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils";
+import { type ProductListItemFragmentFragment } from "@/gql/graphql";
 
 type Props = {
-	item: ProductGetListQuery["products"]["data"][number];
+	item: ProductListItemFragmentFragment
 };
 
 const ProductItem = ({ item }: Props) => {
@@ -19,7 +18,7 @@ const ProductItem = ({ item }: Props) => {
 				<Link href={`products/${item.slug}`}>
 					<div className="mb-6 overflow-hidden">
 						<Image
-							src={item.image}
+							src={item.images[0]?.url || "/images/placeholder.png"}
 							width={150}
 							height={150}
 							alt={item.name}
@@ -29,7 +28,7 @@ const ProductItem = ({ item }: Props) => {
 				</Link>
 				<div className="mb-2 flex items-center justify-between gap-6">
 					<CardTitle>{item.name}</CardTitle>
-					{/* UNCOMMENT THIS <span className="text-xl font-bold">{formatCurrency(item.price)}</span> */}
+					<span className="text-xl font-bold">{formatCurrency(item.price)}</span>
 				</div>
 				<ProductDescription truncate description={item.description} truncateLength={140} />
 			</CardContent>
