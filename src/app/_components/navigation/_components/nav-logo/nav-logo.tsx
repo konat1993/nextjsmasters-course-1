@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image";
+import NextImage from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ const NavLogo = () => {
 			"h-full px-2 flex justify-center items-center transition-colors duration-500 hover:bg-black",
 			pathname === "/" ? "bg-black hover:bg-white" : "",
 		)}>
-			<Image
+			<NextImage
 				src="/nextjs.svg"
 				alt="nextjs Logo"
 				className={cn(

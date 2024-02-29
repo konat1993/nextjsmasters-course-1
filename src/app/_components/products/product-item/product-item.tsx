@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import NextImage from "next/image";
 import Link from "next/link";
 import { ProductDescription } from "../product-description";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
@@ -17,7 +17,7 @@ const ProductItem = ({ item }: Props) => {
 			<CardContent className="px-2">
 				<Link href={`products/${item.slug}`}>
 					<div className="mb-6 overflow-hidden">
-						<Image
+						<NextImage
 							src={item.images[0]?.url || "/images/placeholder.png"}
 							width={150}
 							height={150}
